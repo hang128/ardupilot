@@ -133,8 +133,8 @@ void Copter::update_land_detector()
         }
         else
         {
-            bool accel_stationary_loiter_TA = (land_accel_ef_filter.get().length() <= 7.0f * land_detector_scalar);
-            bool descent_rate_low_loiter_TA = fabsf(inertial_nav.get_velocity_z_up_cms()) < 400 * land_detector_scalar;
+            bool accel_stationary_loiter_TA = (land_accel_ef_filter.get().length() <= 4.0f * land_detector_scalar);
+            bool descent_rate_low_loiter_TA = fabsf(inertial_nav.get_velocity_z_up_cms()) < 200 * land_detector_scalar;
             bool speed_xy_check_TA = (!position_ok() || (inertial_nav.get_speed_xy_cms() <= 250.0f));
 
             if (motor_at_lower_limit && throttle_mix_at_min && accel_stationary_loiter_TA && descent_rate_low_loiter_TA && rangefinder_check && WoW_check && speed_xy_check_TA && (motors->get_throttle_out() <= 0.2f))
