@@ -6,6 +6,12 @@
         "regex": "cpp",
         "*.tcc": "cpp",
         "bitset": "cpp",
-        "cstdlib": "cpp"
+        "cstdlib": "cpp",
+        "array": "cpp",
+        "memory": "cpp",
+        "istream": "cpp",
+        "functional": "cpp",
+        "tuple": "cpp",
+        "utility": "cpp"
     }
 }
