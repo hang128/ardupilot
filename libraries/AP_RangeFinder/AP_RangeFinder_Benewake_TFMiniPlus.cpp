@@ -157,7 +157,8 @@ void AP_RangeFinder_Benewake_TFMiniPlus::process_raw_measure(le16_t distance_raw
                                                              uint16_t &output_distance_cm)
 {
     uint16_t strength = le16toh(strength_raw);
-    const uint16_t MAX_DIST_CM = 1200;
+    //const uint16_t MAX_DIST_CM = 1200;
+    const uint16_t MAX_DIST_CM = 4000;      //由于北醒TF02-Pro的I2C使用TFMiniPlus协议，因此将最大检测范围改为TF02-Pro的最大范围40m
     const uint16_t MIN_DIST_CM = 10;
 
     output_distance_cm = le16toh(distance_raw);
